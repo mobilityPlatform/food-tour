@@ -1,12 +1,14 @@
 package com.gastroventure.lion.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(schema = "RESTAURANTS")
-public class Restaurant {
+public class Restaurant extends BaseEntity{
+
+    @Id
+    @GeneratedValue
+    @Column(name = "restaurant_id")
+    private Long id;
 
     @Column(nullable = false)
     private String title;

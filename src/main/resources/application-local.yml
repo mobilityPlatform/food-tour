@@ -26,7 +26,7 @@ spring:
         show_sql: true
         format_sql: true
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create-drop #validate local이라서 create 옵션으로 했습니다. 차 후 정민교책임님께서, aws로 올릴 시, 기존 저희 운영계와 같이 validate를 하면 될 것 같습니다.
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 service:
@@ -36,10 +36,9 @@ service:
     headerKeyName: X-AUTH-TOKEN
     tokenValidTime: 1800
 
-# local-test
 jasypt:
   encryptor:
-    password: Mobility1!
+    bean: aesEncryptor
 
 debug: true
 
