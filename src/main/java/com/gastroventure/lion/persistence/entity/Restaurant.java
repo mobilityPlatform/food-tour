@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Restaurant extends BaseEntity{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "restaurant_id")
     private Long id;
 
