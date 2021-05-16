@@ -9,6 +9,8 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@ToString
+@Builder
 public class Restaurant extends BaseEntity{
 
     @Id
@@ -23,17 +25,4 @@ public class Restaurant extends BaseEntity{
     private String imageUrl;
 
     private String address;
-
-    @Builder
-    public Restaurant(String title, String imageUrl){
-        this.title = title;
-        this.imageUrl = imageUrl;
-    }
-
-    @Builder
-    public Restaurant(String title, String imageUrl, String address){
-        this.title = title;
-        this.imageUrl = imageUrl;
-        this.address = address;
-    }
 }

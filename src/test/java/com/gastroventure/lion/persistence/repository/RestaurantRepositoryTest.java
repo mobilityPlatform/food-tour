@@ -17,7 +17,7 @@ class RestaurantRepositoryTest {
     RestaurantRepository restaurantRepository;
 
     @Test
-    @DisplayName("조회 테스트")
+    @DisplayName("조회 테스트 + 저장테스트")
     void getTest(){
 
         Restaurant restaurant = restaurantRepository.save(Restaurant.builder().title("집앞 음식점").imageUrl("https://~").build());
@@ -26,5 +26,7 @@ class RestaurantRepositoryTest {
         assertEquals(restaurant.getAddress(),one.getAddress());
         assertEquals(restaurant.getImageUrl(),one.getImageUrl());
     }
+
+
 
 }
